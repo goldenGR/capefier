@@ -78,11 +78,12 @@ class CapePackManager:
 
         for cape in capes:
             try:
+                cape = cape.lower()
                 cape_path = next(x["path"] for x in CAPES_TO_PATHS if x["name"] == cape)
                 path = Path(target_dir) / MC_PATH / cape_path
                 print(path)
                 entry_dict = next(d for d in capeEntry if cape in d)
-                if entry_dict[cape.lower()] != None:
+                if entry_dict[cape] != None:
                     capeContent = entry_dict[cape].read()
                 else: logger(f"Error applying cape {cape}. Reason: Not a valid cape!", True)
 
