@@ -6,7 +6,7 @@ What is it?
 
 Capefier is an simple application that allows you to modify *client side* minecraft capes  in **vanilla Minecraft** easily!
 
-By importing "cape-packs" you can replace any cape you want for diferenet themes and designs for your POV without any mods!
+By importing "cape-packs" you can replace any cape you want for differenet themes and designs for your POV without any mods!
 
 ## How to use
 
@@ -14,12 +14,12 @@ By importing "cape-packs" you can replace any cape you want for diferenet themes
 
 Go to [releases](https://github.com/goldenGR/capefier/releases/new) and install the latest ``capefier.exe`` from there
 
-**Build it urself**:
+**Build it yourself**:
 
 Clone the github repo OR install it as zip <br>
 Install the dependencies by doing 
 ```bash
-pip install -r requiremements.txt
+pip install -r requirements.txt
 ``` 
 and run ``src/main.py`` with python.
 
@@ -32,15 +32,15 @@ Fear no more tutotorial is here:
 **Loading a pack**
 
 After opening the app u gonna see a big blue button saying ``Import Cape Pack…``
-Clicking on that will promt u to select a ``.cp`` (cape-pack) file (also supports ``.zip``)
+Clicking on that will prompt u to select a ``.cp`` (cape-pack) file (also supports ``.zip``)
 
-After sellecting a cape-pack u will be listed with the pack information and the capes the pack supports
+After selecting a cape-pack u will be listed with the pack information and the capes the pack supports
 
 **Applying the pack**
 
 Now u have succesfully loaded a pack (if console has no errors ofcourse lol) <br>
 Now u can click the big button that says ``Apply Pack``<br>
-After doing so u will be promted with a selection of minecraft paths to install the pack to. If none of those fit you, you can also enter a custom location path. **Just remember the it needs to be the "minecraft" folder where the assets folder leaves in**, (e.x. ``%appdata%/.minecraft/`` **NOT** ``%appdata%/.minecraft/assets`` or any other folder)
+After doing so u will be prompted with a selection of minecraft paths to install the pack to. If none of those fit you, you can also enter a custom location path. **Just remember the it needs to be the "minecraft" folder where the assets folder that it lives in**, (e.x. ``%appdata%/.minecraft/`` **NOT** ``%appdata%/.minecraft/assets`` or any other folder)
 
 Congratulations! You have succesfully installed a pack! Reboot your game for the changes to take effect
 
