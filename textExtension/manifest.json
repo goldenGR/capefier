@@ -1,0 +1,10 @@
+{
+    "packName": "golden's BetterCapes",
+    "packIcon": "icon.png",
+    "author": "goldenGR",
+
+    "capes": {
+        "MoonlightTrail": "textures/moonlightTrail.png",
+        "Mojang Office": "textures/mojangOffice.png"
+    }
+}
