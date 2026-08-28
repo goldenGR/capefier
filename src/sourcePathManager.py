@@ -126,8 +126,6 @@ class MinecraftPathDialog(QDialog):
 
     @staticmethod
     def getPath(parent=None, common_paths: dict | None = None) -> str | None:
-        """Opens the dialog modally and returns the selected path,
-        or None if the user cancelled."""
         owns_app = QApplication.instance() is None
         app = QApplication(sys.argv) if owns_app else QApplication.instance()
 

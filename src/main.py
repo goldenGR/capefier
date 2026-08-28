@@ -182,7 +182,7 @@ class MainWindow(QMainWindow):
 
     def load_pack(self, path: str):
         try:
-            files = self.manager.load_pack(path)
+            files = self.manager.load_pack(path, self.log_msg)
         except Exception as e:
             self.log_msg(f"Failed to read pack: {e}", error=True)
             return
@@ -250,7 +250,7 @@ class MainWindow(QMainWindow):
         if not path:
             return
         try:
-            self.manager.apply_pack(self.packCapes, self.capeEntryList, path)
+            self.manager.apply_pack(self.packCapes, self.capeEntryList, path, self.log_msg)
             self.log_msg("Pack applied successfully.")
         except NotImplementedError:
             self.log_msg("apply_pack() is not implemented yet — this is a stub.", error=True)
