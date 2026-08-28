@@ -60,8 +60,9 @@ class CapePackManager:
         self.loaded_pack_path: Path | None = None
         self.files: list[object] = [] 
 
-    def load_pack(self, path: str, logger: function) -> list[zipfile.ZipExtFile]:
+    def load_pack(self, path: str, logger) -> list[zipfile.ZipExtFile]:
         try:
+            logger("test", True)
             self.loaded_pack_path = Path(path)
             with zipfile.ZipFile(path, "r") as zf:
                 self.files = [zf.open(n) for n in zf.namelist() if not n.endswith("/")]
@@ -69,7 +70,7 @@ class CapePackManager:
         except Exception as e:
             logger(f"Error loading pack! Reason: {e}", True)
 
-    def apply_pack(self, capes, capeEntry, target_dir: str, logger: function) -> None:
+    def apply_pack(self, capes, capeEntry, target_dir: str, logger) -> None:
         # raise NotImplementedError("apply_pack() not implemented yet")
         print("======= APPLY PACK =======")
         print(capeEntry)
