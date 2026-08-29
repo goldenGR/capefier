@@ -87,13 +87,12 @@ class CapePackManager:
                 path = Path(target_dir) / MC_PATH / cape_path
                 print(path)
 
-                entry_dict = next(d for d in capeEntry if cape in d)
-                if entry_dict[cape] is None:
-                    logger(f"Error applying cape {cape}. Reason: Not a valid cape!", True)
-                    continue 
+                entry_dict = next((d for d in capeEntry if cape in d), None)
+                if entry_dict is None:
+                    logger(f"Error applying cape {cape}. Reason: No entry found for this cape!", True)
+                    continue
 
                 capeContent = entry_dict[cape]
-
                 if capeContent is None:
                     logger(f"Error applying cape {cape}. Reason: Not a valid cape!", True)
                     continue
@@ -104,4 +103,4 @@ class CapePackManager:
                 with open(path, "wb") as f:
                     f.write(capeBytes)
             except Exception as e:
-                logger(f"Error applying cape {cape}. Reason: {e}!", True)
+                logger(f"Error applying cape {cape}. Reason: {e!r}!", True)
