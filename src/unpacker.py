@@ -79,16 +79,29 @@ class CapePackManager:
         for cape in capes:
             try:
                 cape = cape.lower()
-                cape_path = next(x["path"] for x in CAPES_TO_PATHS if x["name"] == cape)
+                cape_match = next((x for x in CAPES_TO_PATHS if x["name"] == cape), None)
+                if cape_match is None:
+                    logger(f"Error applying cape {cape}. Reason: No path mapping found for this cape!", True)
+                    continue
+                cape_path = cape_match["path"]
                 path = Path(target_dir) / MC_PATH / cape_path
                 print(path)
+
                 entry_dict = next(d for d in capeEntry if cape in d)
-                if entry_dict[cape] != None:
-                    capeContent = entry_dict[cape].read()
-                else: logger(f"Error applying cape {cape}. Reason: Not a valid cape!", True)
+                if entry_dict[cape] is None:
+                    logger(f"Error applying cape {cape}. Reason: Not a valid cape!", True)
+                    continue 
+
+                capeContent = entry_dict[cape]
+
+                if capeContent is None:
+                    logger(f"Error applying cape {cape}. Reason: Not a valid cape!", True)
+                    continue
+
+                capeBytes = capeContent.read()
 
                 path.parent.mkdir(parents=True, exist_ok=True)
                 with open(path, "wb") as f:
-                    f.write(capeContent)
+                    f.write(capeBytes)
             except Exception as e:
                 logger(f"Error applying cape {cape}. Reason: {e}!", True)
