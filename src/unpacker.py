@@ -78,8 +78,7 @@ class CapePackManager:
 
         for cape in capes:
             try:
-                cape = cape.lower()
-                cape_match = next((x for x in CAPES_TO_PATHS if x["name"] == cape), None)
+                cape_match = next((x for x in CAPES_TO_PATHS if x["name"] == cape.lower()), None)
                 if cape_match is None:
                     logger(f"Error applying cape {cape}. Reason: No path mapping found for this cape!", True)
                     continue

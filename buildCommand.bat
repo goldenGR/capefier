@@ -1,0 +1,1 @@
+python -m nuitka --standalone --onefile --follow-imports --enable-plugin=pyside6 --output-dir=build src/main.py
