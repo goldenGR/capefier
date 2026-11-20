@@ -88,7 +88,8 @@ Capes are stored inside the ``capes`` table in the manifest in this way:
 > - 256×128 - 4x resolution
 > - 512×256 - 8x resolution
 > - 1024×512 - 16x resolution
-> for moddern minecraft. for legacy versions only 64×32 sizes are supported (you can use this [cape](https://minecraft.wiki/images/MINECON_2012_Cape_%28texture%29.png?e8ca7&format=original) as a base)
+> 
+> for moddern minecraft. For legacy versions only 64×32 sizes are supported (you can use this [cape](https://minecraft.wiki/images/MINECON_2012_Cape_%28texture%29.png?e8ca7&format=original) as a base)
 
 ```json
     "capes": {
