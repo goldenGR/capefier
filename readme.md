@@ -82,7 +82,13 @@ After making ur manifest you can start making ur capes
 
 Capes are stored inside the ``capes`` table in the manifest in this way:
 
-> NOTE! All capeNames key must match a valid cape name (see bellow) & all cape textures must match the standard ``64x32px`` cape format (you can use this [cape](https://minecraft.wiki/images/MINECON_2012_Cape_%28texture%29.png?e8ca7&format=original) as a base)
+> NOTE! All capeNames key must match a valid cape name (see bellow) & the the cape textures resolutions can be
+- 64x32 - Standard resolution
+- 128×64 - 2x resolution
+- 256×128 - 4x resolution
+- 512×256 - 8x resolution
+- 1024×512 - 16x resolution
+for moddern minecraft. for legacy versions only 64×32 sizes are supported (you can use this [cape](https://minecraft.wiki/images/MINECON_2012_Cape_%28texture%29.png?e8ca7&format=original) as a base)
 
 ```json
     "capes": {
